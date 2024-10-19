@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<style>
+    /* Basic styling for the circular button */
+    .circular-button {
+        cursor: pointer;
+        border: none;
+        background: none;
+        font-size: 24px;
+        position: relative; /* Position relative for dropdown */
+        top: 20px;
+        right: 0;
+    }
+
+    /* Profile Menu Styling */
+    #profile-menu {
+        position: absolute;
+        top: 10px;
+        right: 0;
+        width: 200px;
+        height: 600px;
+        background-color: #28a745;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 10px;
+        z-index: 1000;
+        display: none; /* Initially hidden */
+    }
+
+    /* Styles for individual menu items */
+    #profile-menu p {
+        margin: 0;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: larger;
+        color: white;
+    }
+
+    #profile-menu button {
+        width: 100%;
+        padding: 8px;
+        background-color: white;
+        color: black;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    #logout-button {
+        background-color: white;
+        color: black;
+        border-radius: 50px;
+    }
+    
+
+    /* Hero Image Styling */
+    .hero {
+        width: 100%;
+        max-width: 450px;
+        height: 450px;
+        display: block;
+        margin: 20px auto;
+        border-radius: 10px;
+        top: 500px;
+        right:150px;
+    }
+</style>
+<body>
+    <div class="container">
+        <header>
+            <h1>Soft Skill Enhancement App</h1>
+            <h1 id="welcome-message"></h1> <!-- Welcome Message -->
+
+            <!-- Circular Button for Profile -->
+            <div class="circular-button" onclick="toggleProfileMenu()">
+                <span>☰</span> <!-- Toggle button icon -->
+            </div>
+
+            <!-- Profile Menu Dropdown -->
+            <div id="profile-menu">
+                <p>Full Name: <span id="full-name-display"></span></p>
+                <p>Email: <span id="email-display"></span></p>
+                <button id="logout-button">Logout</button>
+            </div>
+        </header>
+        <!-- Navigation Menu -->
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="vocabulary-lesson.html">Vocabulary Lessons</a></li>
+                <li><a href="speech-lesson.html">Speech Lessons</a></li>
+                <li><a href="prounciation.html">Pronunciation Lessons</a></li>
+                <li><a href="./test section/attend-test.html">Practice Tests</a></li>
+                <li><a href="./test section/results.html">Test Reports</a></li>
+            </ul>
+             <!-- Search Bar Section -->
+             <div class="search-bar1">
+                <input type="text" id="search-bar1" placeholder="Search for vocabulary, speech, or pronunciation..." />
+                <button id="search-button">Search</button>
+                <button id="clear-button">Clear</button>
+                
+                <!-- Hero Image within the search bar section -->
+                <img src="./Hero.png" alt="Learning Image" class="hero">
+            </div>
+        </nav>
+
+        <!-- Initial View Section -->
+        <div id="initial-view">
+            <p>Start your learning journey by searching for a word above!</p>
+        </div>
+
+        <!-- Search Results Section (Initially Hidden) -->
+        <div id="search-results" class="search-results hidden">
+            <h2>Search Results</h2>
+            <div id="results-container"></div>
+        </div>
+
+       
+    </div>
+
+    <script src="./scripts.js"></script>
+</body>
+</html>
